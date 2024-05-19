@@ -1,0 +1,29 @@
+def classify_triangle(a, b, c):
+    # Check if the sides can form a triangle
+    if a + b > c and a + c > b and b + c > a:
+        if a == b == c:
+            return "Equilateral"
+        elif a == b or b == c or a == c:
+            return "Isosceles"
+        else:
+            return "Scalene"
+    else:
+        return "Not a triangle"
+
+def main():
+    try:
+        # Get user input for the sides of the triangle
+        a = float(input("Enter the length of the first side: "))
+        b = float(input("Enter the length of the second side: "))
+        c = float(input("Enter the length of the third side: "))
+        
+        # Classify the triangle
+        result = classify_triangle(a, b, c)
+        
+        # Print the result
+        print(f"The triangle is: {result}")
+    except ValueError:
+        print("Invalid input. Please enter numeric values.")
+
+if __name__ == "__main__":
+    main()
