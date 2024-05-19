@@ -1,0 +1,6 @@
+def is_valid_palindrome(sentence):
+    # Remove non-alphanumeric characters and convert to lowercase
+    cleaned_sentence = ''.join(char.lower() for char in sentence if char.isalnum())
+    
+    # Check if the cleaned sentence is equal to its reverse
+    return cleaned_sentence == cleaned_sentence[::-1]
