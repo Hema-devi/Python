@@ -1,0 +1,27 @@
+def sort_numbers(num1, num2, num3):
+    # Create a list with the three numbers
+    numbers = [num1, num2, num3]
+    
+    # Sort the numbers in ascending order
+    numbers.sort()
+    
+    # Return the sorted numbers
+    return numbers
+
+def main():
+    try:
+        # Get user input for three numbers
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        num3 = float(input("Enter the third number: "))
+        
+        # Sort the numbers
+        sorted_numbers = sort_numbers(num1, num2, num3)
+        
+        # Print the numbers in ascending order
+        print("Numbers in ascending order:", sorted_numbers)
+    except ValueError:
+        print("Invalid input. Please enter numeric values.")
+
+if __name__ == "__main__":
+    main()
