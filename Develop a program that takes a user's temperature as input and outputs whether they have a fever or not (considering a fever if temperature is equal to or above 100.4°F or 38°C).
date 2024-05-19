@@ -1,0 +1,25 @@
+def check_fever(temp, unit):
+    if unit.lower() == 'f':
+        if temp >= 100.4:
+            return "You have a fever."
+        else:
+            return "You do not have a fever."
+    elif unit.lower() == 'c':
+        if temp >= 38:
+            return "You have a fever."
+        else:
+            return "You do not have a fever."
+    else:
+        return "Invalid unit. Please use 'F' for Fahrenheit or 'C' for Celsius."
+
+def main():
+    try:
+        temp = float(input("Enter your temperature: "))
+        unit = input("Enter the unit (F for Fahrenheit, C for Celsius): ")
+        result = check_fever(temp, unit)
+        print(result)
+    except ValueError:
+        print("Invalid temperature input. Please enter a numeric value.")
+
+if __name__ == "__main__":
+    main()
