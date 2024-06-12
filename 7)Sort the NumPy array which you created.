@@ -1,0 +1,20 @@
+import numpy as np
+def add_item(array, item):
+    return np.append(array, item)
+def remove_item(array, index):
+    if index < 0 or index >= len(array):
+        print("Index out of bounds")
+        return array
+    return np.delete(array, index)
+def sort_array(array):
+    return np.sort(array)
+array = np.array([1, 2, 3, 4, 5])
+print("Original array:", array)
+item_to_add = 6
+array = add_item(array, item_to_add)
+print("Array after adding an item:", array)
+index_to_remove = 2  # Removing the item at index 2
+array = remove_item(array, index_to_remove)
+print("Array after removing an item:", array)
+sorted_array = sort_array(array)
+print("Sorted array:", sorted_array)
