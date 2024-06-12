@@ -1,0 +1,36 @@
+import numpy as np
+def add_item(array, item):
+    return np.append(array, item)
+def remove_item(array, index):
+    if index < 0 or index >= len(array):
+        print("Index out of bounds")
+        return array
+    return np.delete(array, index)
+def sort_array(array):
+    return np.sort(array)
+def reshape_array(array, new_shape):
+    if array.size != np.prod(new_shape):
+        print("Cannot reshape array: incompatible dimensions")
+        return array
+    return np.reshape(array, new_shape)
+array = np.array([1, 2, 3, 4, 5])
+print("Original array:", array)
+item_to_add = 6
+array = add_item(array, item_to_add)
+print("Array after adding an item:", array)
+index_to_remove = 2 
+array = remove_item(array, index_to_remove)
+print("Array after removing an item:", array)
+sorted_array = sort_array(array)
+print("Sorted array:", sorted_array)
+reshaped_array = reshape_array(sorted_array, (2, 5))
+print("Reshaped array (2x5 matrix):")
+print(reshaped_array)
+print("Element at [0, 0]:", reshaped_array[0, 0])
+print("Element at [1, 4]:", reshaped_array[1, 4])
+print("First row:", reshaped_array[0, :])
+print("Second row:", reshaped_array[1, :])
+print("First column:", reshaped_array[:, 0])
+print("Last column:", reshaped_array[:, -1])
+print("Sub-matrix (first two elements of each row):")
+print(reshaped_array[:, :2])
